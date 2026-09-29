@@ -24,7 +24,7 @@ A free Windows desktop application for human pose estimation (23 keypoints) from
 | 高速 | RF-DETR-L | RTMPose-M ＋ 手指モデル | 高精度より高速 |
 | カスタム | 任意 | 任意 | 同梱モデルから組み合わせを選択 |
 
-解剖学的マーカー 52 点の SynthPose などは、追加モデルパック（別配布）で使えます。
+解剖学的マーカー 52 点の SynthPose は、追加モデルパック `HPE-ModelPack-SynthPose.zip`（約 1.3GB。[Releases](https://github.com/SBM-Labo/HPE/releases/latest) で配布）を入れると使えます。入れ方は ZIP 内の `README_SynthPose.txt` をご覧ください。
 
 ## 動作環境
 
