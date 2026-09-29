@@ -22,20 +22,21 @@ A free Windows desktop application for human pose estimation (23 keypoints) from
 |---|---|---|---|
 | 高精度（既定） | RF-DETR-L | ViTPose-H Wholebody（fp16） | 研究用の標準。手動デジタイズとの誤差 6.2px |
 | 高速 | RF-DETR-L | RTMPose-M ＋ 手指モデル | 高精度より高速 |
+| SynthPose | RTMDet-M | SynthPose-Huge | 解剖学的マーカー 52 点（下肢長などの研究用） |
 | カスタム | 任意 | 任意 | 同梱モデルから組み合わせを選択 |
-
-解剖学的マーカー 52 点の SynthPose は、追加モデルパック `HPE-ModelPack-SynthPose.zip`（約 1.3GB。[Releases](https://github.com/SBM-Labo/HPE/releases/latest) で配布）を入れると使えます。入れ方は ZIP 内の `README_SynthPose.txt` をご覧ください。
 
 ## 動作環境
 
 - 64 ビット版 Windows 10 / 11
 - GPU（DirectML 対応）があれば自動で使います。使えない場合は CPU で動きます（時間はかかります）。
-- インストールには 2.5GB 以上の空き容量が必要です（姿勢推定モデル約 1.8GB を含みます）。
+- インストールには 4GB 以上の空き容量が必要です（姿勢推定モデル約 3.1GB を含みます）。
 
 ## インストール
 
-1. [Releases](https://github.com/SBM-Labo/HPE/releases/latest) から `HPE-Setup-<版>.exe`（約 1.8GB。姿勢推定モデルを含みます）をダウンロードします。
-2. ダウンロードしたファイルを実行し、利用規約に同意してインストールします。
+1. [Releases](https://github.com/SBM-Labo/HPE/releases/latest) から、次の **2 つのファイルを両方** ダウンロードし、同じフォルダに置きます（合わせて約 3GB。姿勢推定モデルを含みます）。
+   - `HPE-Setup-<版>.exe`（インストーラー本体）
+   - `HPE-Setup-<版>.nsisbin`（モデルなどのデータ。GitHub の1ファイル上限 2GB を超えるため別ファイルになっています）
+2. `HPE-Setup-<版>.exe` を実行し、利用規約に同意してインストールします。
 3. 「Windows によって PC が保護されました」と表示された場合は、**詳細情報** → **実行** を押してください（本アプリはコード署名をしていないため、この表示が出ます）。
 
 ## 利用規約

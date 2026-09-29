@@ -14,17 +14,19 @@ HPE（以下「本ソフトウェア」）には、以下の第三者ソフト�
 | ViTPose-B Wholebody（fp16 に変換） | 全身姿勢推定 | ViTAE-Transformer ViTPose | Apache-2.0（コード） |
 | RTMPose-M（Halpe26） | 身体姿勢推定 | OpenMMLab MMPose | Apache-2.0 |
 | RTMPose-M hand | 手指推定 | OpenMMLab MMPose | Apache-2.0 |
+| SynthPose-Huge（fp16 に変換） | 解剖学的マーカー52点（SynthPose プリセット） | Stanford MIMI SynthPose / OpenCapBench | Apache-2.0 |
 
-各モデルは ONNX 形式への変換（ViTPose-H・ViTPose-B は fp16 化）を行っています。
+各モデルは ONNX 形式への変換（ViTPose-H・ViTPose-B・SynthPose-Huge は fp16 化）を行っています。
 
 **学習データについての注意**：全身（Wholebody）モデルは COCO-WholeBody アノテーションで学習されています。
 COCO-WholeBody のアノテーションは「研究・非商用目的に限る」とされており、商用利用には権利者への連絡が必要です
 （https://github.com/jin-s13/COCO-WholeBody）。RTMPose（Halpe26）の学習データにも研究目的に限定された
-データセットが含まれます。本ソフトウェアを研究・教育以外の目的で利用する場合はご注意ください。
+データセットが含まれます。SynthPose-Huge は ViTPose を合成データ（BEDLAM など）で追加学習したモデルで、
+学習データの利用条件は各データセットに従います。本ソフトウェアを研究・教育以外の目的で利用する場合はご注意ください。
 
 ## 2. 追加モデルパック（別配布・任意）
 
-ViTPose-L、RTMW-X、SynthPose-Huge、YOLOX 等は標準インストールに含まれません。追加モデルパックに同梱の説明に従ってください
+ViTPose-L、RTMW-X、YOLOX 等は標準インストールに含まれません。追加モデルパックに同梱の説明に従ってください
 （いずれも Apache-2.0 のモデルですが、上記と同様に学習データの利用条件にご注意ください）。
 
 ## 3. 実行ファイル（別プロセスとして起動）
