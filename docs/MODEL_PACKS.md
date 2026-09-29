@@ -18,7 +18,7 @@ Coordinate difference of ViTPose-B from fp32: mean 0.004 px, max 0.027 px (3 fra
 
 ## Additional model packs (distributed separately on GitHub Releases, optional)
 
-Place the downloaded files in the folder opened by ヘルプ (Help) → 追加モデルのフォルダを開く (Open additional models folder) (`resources\Models` in the installation folder);
+Place the downloaded files in the folder opened by Help → "Open additional models folder" (`resources\Models` in the installation folder);
 they can then be selected in the custom settings and the corresponding presets.
 
 | Pack | Files | Size | Contents |
