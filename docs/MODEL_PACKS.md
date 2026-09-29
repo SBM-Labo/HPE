@@ -1,6 +1,6 @@
 # HPE 1.4 モデル構成（標準同梱／追加モデルパック）
 
-## 標準同梱（インストーラに含む・約1.8GB）
+## 標準同梱（インストーラに含む・約3.1GB）
 
 | ファイル | 用途 | 使うプリセット |
 |---|---|---|
@@ -9,6 +9,7 @@
 | vitpose-b-wholebody-fp16.onnx | 全身姿勢（ViTPose-H より約5倍速い） | カスタム（ViTPose-H が無い環境では高精度の代わり） |
 | rtmpose-m.onnx / rtmpose-m_hand.onnx | 身体姿勢＋手指（高速） | 高速 |
 | rtmdet_m.onnx | 人物検出（CPU向け・軽量） | カスタム／SynthPose |
+| synthpose-vitpose-huge-hf.onnx | 解剖学的マーカー52点（下肢長等の研究用。重みを fp16 に変換） | SynthPose |
 
 ViTPose-H・ViTPose-B の fp16 版は fp32 版を onnxconverter-common で変換（keep_io_types=True）。
 ViTPose-B の fp32 との座標差：平均 0.004px・最大 0.027px（sample.mp4 の3コマ・198点, 2026-09-27）。
@@ -20,7 +21,6 @@ ViTPose-B の fp32 との座標差：平均 0.004px・最大 0.027px（sample.mp
 
 | パック | ファイル | 容量 | 内容 |
 |---|---|---|---|
-| SynthPose | HPE-ModelPack-SynthPose.zip（synthpose-vitpose-huge-hf.onnx・README_SynthPose.txt・LICENSE-Apache-2.0.txt） | 約1.3GB | 解剖学的マーカー52点（下肢長等の研究用） |
 | ViTPose-L | vitpose-l-wholebody.onnx / vitpose-l-coco.onnx / vitpose-l-coco_25.onnx | 各約1.2GB | 比較・検証用 |
 | その他 | rtmw-x.onnx, rtmpose-x.onnx, vitpose-b-wholebody.onnx(fp32), yolox_x.onnx, yolox_m.onnx, rfdetr-medium.onnx | 0.1〜0.4GB | 比較・検証用 |
 
