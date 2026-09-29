@@ -7,6 +7,18 @@ A description in Japanese is available on [researchmap](https://researchmap.jp/b
 
 **[⬇ Download the latest version (Releases)](https://github.com/SBM-Labo/HPE/releases/latest)**
 
+<p align="center">
+  <img src="docs/images/hpe_demo.gif" width="270" alt="Skeleton estimated by HPE (High accuracy preset) overlaid on a gymnastics video">
+</p>
+
+## Screenshots
+
+| Estimation | Correction, smoothing and export |
+|---|---|
+| <img src="docs/images/hpe_estimation.png" alt="HPE estimation screen"> | <img src="docs/images/hpe_correction.png" alt="HPE correction and export screen"> |
+
+The user interface is in Japanese. Video used in the demo and screenshots: [Pexels](https://www.pexels.com/) (video 6573038).
+
 ## Features
 
 - Estimates 23 body keypoints (including hand tips, foot points and the top of the head) from images and videos, for multiple people.
