@@ -20,7 +20,7 @@ ViTPose-B の fp32 との座標差：平均 0.004px・最大 0.027px（sample.mp
 
 | パック | ファイル | 容量 | 内容 |
 |---|---|---|---|
-| SynthPose | synthpose-vitpose-huge-hf.onnx | 約1.2GB | 解剖学的マーカー52点（下肢長等の研究用） |
+| SynthPose | HPE-ModelPack-SynthPose.zip（synthpose-vitpose-huge-hf.onnx・README_SynthPose.txt・LICENSE-Apache-2.0.txt） | 約1.3GB | 解剖学的マーカー52点（下肢長等の研究用） |
 | ViTPose-L | vitpose-l-wholebody.onnx / vitpose-l-coco.onnx / vitpose-l-coco_25.onnx | 各約1.2GB | 比較・検証用 |
 | その他 | rtmw-x.onnx, rtmpose-x.onnx, vitpose-b-wholebody.onnx(fp32), yolox_x.onnx, yolox_m.onnx, rfdetr-medium.onnx | 0.1〜0.4GB | 比較・検証用 |
 

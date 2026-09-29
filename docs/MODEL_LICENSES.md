@@ -25,7 +25,7 @@
 | `rtmw-x.onnx` / `rtmpose-x.onnx` | RTMW・RTMPose / MMPose | Apache-2.0 |
 | `yolox_x.onnx` / `yolox_m.onnx` | [YOLOX (Megvii)](https://github.com/Megvii-BaseDetection/YOLOX) | Apache-2.0 |
 | `rfdetr-medium.onnx` | RF-DETR (Roboflow) | Apache-2.0 |
-| `synthpose-vitpose-huge-hf.onnx` | SynthPose（ViTPoseベース, HuggingFace） | ViTPoseベース（※上流の重み配布条件は要確認） |
+| `synthpose-vitpose-huge-hf.onnx`（`HPE-ModelPack-SynthPose.zip`） | [SynthPose / OpenCapBench (Stanford MIMI)](https://huggingface.co/stanfordmimi/synthpose-vitpose-huge-hf)（ViTPose-Huge ベース。ONNX 化し重みを fp16 に変換） | **Apache-2.0**（重み。合成データ（BEDLAM 等）で追加学習。学習データの利用条件は各データセットに従う） |
 
 ## 除外したモデル（ライセンス上の理由）
 
