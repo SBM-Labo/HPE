@@ -3,7 +3,7 @@
 A free Windows desktop application that estimates human body keypoints (23 joint coordinates) from video and images.
 No Python is required: install it and use state-of-the-art pose estimation models such as ViTPose-H.
 
-日本語の説明は [researchmap](https://researchmap.jp/kazutaka-murata/research_blogs) をご覧ください。
+A description in Japanese is available on [researchmap](https://researchmap.jp/blogs/blog_entries/view/804425/5667e6b4a90300bc75a2a33440a0e75f?frame_id=1462744).
 
 **[⬇ Download the latest version (Releases)](https://github.com/SBM-Labo/HPE/releases/latest)**
 
@@ -20,10 +20,10 @@ No Python is required: install it and use state-of-the-art pose estimation model
 
 | Preset | Person detector | Pose model | Notes |
 |---|---|---|---|
-| High accuracy (高精度, default) | RF-DETR-L | ViTPose-H WholeBody (fp16) | Standard for research. 6.2 px error against manual digitizing |
-| Fast (高速) | RF-DETR-L | RTMPose-M + hand model | Faster than High accuracy |
+| High accuracy (default) | RF-DETR-L | ViTPose-H WholeBody (fp16) | Standard for research. 6.2 px error against manual digitizing |
+| Fast | RF-DETR-L | RTMPose-M + hand model | Faster than High accuracy |
 | SynthPose | RTMDet-M | SynthPose-Huge | 52 anatomical markers (for research such as segment lengths) |
-| Custom (カスタム) | Any | Any | Choose any combination of the bundled models |
+| Custom | Any | Any | Choose any combination of the bundled models |
 
 ## Requirements
 
