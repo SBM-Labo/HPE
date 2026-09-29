@@ -35,7 +35,7 @@ ViTPose-L、RTMW-X、SynthPose-Huge、YOLOX 等は標準インストールに含
 | FFprobe（npm `ffprobe-static` 3.1.0 経由） | GPL（FFmpeg プロジェクト） | https://ffmpeg.org/download.html#get-sources |
 
 FFmpeg / FFprobe は本ソフトウェアとは独立したプログラムとして同梱され、別プロセスとして呼び出されます。
-GPL-3.0 の全文は `licenses/GPL-3.0.txt` にあります。ソースコードの入手に問題がある場合は作者（k-murata@andrew.ac.jp）までご連絡ください。配布日から3年間、対応するソースコードを提供します。
+GPL-3.0 の全文は `licenses/GPL-3.0.txt` にあります。ソースコードの入手に問題がある場合は作者（k-murata[at]andrew.ac.jp）までご連絡ください。配布日から3年間、対応するソースコードを提供します。
 
 ## 4. アプリケーション基盤・ライブラリ
 

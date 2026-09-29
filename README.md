@@ -57,6 +57,6 @@ A free Windows desktop application for human pose estimation (23 keypoints) from
 ## 不具合の報告・問い合わせ
 
 - 不具合の報告・要望：[Issues](https://github.com/SBM-Labo/HPE/issues)
-- 連絡先：村田 和隆（桃山学院大学 人間教育学部）k-murata@andrew.ac.jp
+- 連絡先：村田 和隆（桃山学院大学 人間教育学部）k-murata[at]andrew.ac.jp
 
 © 2026 Kazutaka Murata (SBM_Labo)

@@ -18,7 +18,7 @@ Copyright (c) 2026 Kazutaka Murata (SBM_Labo). All rights reserved.
 5. 規約の変更
    本規約は予告なく変更されることがあります。最新版は配布ページに掲載します。
 
-連絡先: Kazutaka Murata <k-murata@andrew.ac.jp>
+連絡先: Kazutaka Murata <k-murata[at]andrew.ac.jp>
 
 [English]
 1. License grant
@@ -37,4 +37,4 @@ Copyright (c) 2026 Kazutaka Murata (SBM_Labo). All rights reserved.
 5. Changes
    These terms may be changed without notice. The latest version is published on the download page.
 
-Contact: Kazutaka Murata <k-murata@andrew.ac.jp>
+Contact: Kazutaka Murata <k-murata[at]andrew.ac.jp>

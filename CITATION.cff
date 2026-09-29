@@ -12,7 +12,6 @@ authors:
   - family-names: "Murata"
     given-names: "Kazutaka"
     affiliation: "Faculty of Human Education, Momoyama Gakuin University (St. Andrew's University)"
-    email: "k-murata@andrew.ac.jp"
 version: "1.4.0"
 date-released: "2026-09-29"   # GitHub Release を作成する日に合わせて更新
 license-url: "https://github.com/SBM-Labo/HPE/blob/main/LICENSE.txt"
