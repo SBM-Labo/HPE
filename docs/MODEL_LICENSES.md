@@ -1,43 +1,43 @@
-# モデルライセンス一覧 / Model Licenses
+# Model Licenses
 
-本アプリ（HPE 1.4）が同梱・使用する機械学習モデルのライセンス一覧です。
-モデルの**コード**はすべて Apache-2.0 系で構成しています。ただし学習データの利用条件は別で、後述の注意事項を参照してください。
-利用者向けの表記は `THIRD_PARTY_NOTICES.md` にまとめています。
+Licenses of the machine learning models bundled with or used by this application (HPE 1.4).
+The model **code** is all under Apache-2.0-type licenses. The terms of the training data are separate; see the notes below.
+The notice for users is in `THIRD_PARTY_NOTICES.md`.
 
-最終確認日: 2026-09-27
+Last checked: 2026-09-27
 
-## 標準同梱モデル（インストーラに含む）
+## Standard models (included in the installation)
 
-| 役割 | モデル | 由来 | ライセンス |
+| Role | Model | Origin | License |
 |---|---|---|---|
-| 人物検出（既定） | `rfdetr-large.onnx` | [RF-DETR (Roboflow)](https://github.com/roboflow/rf-detr) | **Apache-2.0** |
-| 人物検出（軽量） | `rtmdet_m.onnx` | [RTMDet / MMDetection](https://github.com/open-mmlab/mmdetection)（person特化weights は [facebook/sapiens-pose-bbox-detector](https://huggingface.co/facebook/sapiens-pose-bbox-detector) ミラー経由, mmdeployでONNX化） | **Apache-2.0** |
-| 姿勢推定（高精度） | `vitpose-h-wholebody-fp16.onnx` | [ViTPose](https://github.com/ViTAE-Transformer/ViTPose)（fp32版を fp16 に変換） | **Apache-2.0**（コード） |
-| 姿勢推定（標準） | `vitpose-b-wholebody-fp16.onnx` | [ViTPose](https://github.com/ViTAE-Transformer/ViTPose)（fp32版を fp16 に変換） | **Apache-2.0**（コード） |
-| 姿勢推定（高速・body） | `rtmpose-m.onnx` | [RTMPose / MMPose](https://github.com/open-mmlab/mmpose) | **Apache-2.0** |
-| 手指推定（高速・hand） | `rtmpose-m_hand.onnx` | [RTMPose / MMPose](https://github.com/open-mmlab/mmpose) | **Apache-2.0** |
-| 姿勢推定（解剖学的マーカー52点） | `synthpose-vitpose-huge-hf.onnx` | [SynthPose / OpenCapBench (Stanford MIMI)](https://huggingface.co/stanfordmimi/synthpose-vitpose-huge-hf)（ViTPose-Huge ベース。ONNX 化し重みを fp16 に変換） | **Apache-2.0**（重み。合成データ（BEDLAM 等）で追加学習。学習データの利用条件は各データセットに従う） |
+| Person detection (default) | `rfdetr-large.onnx` | [RF-DETR (Roboflow)](https://github.com/roboflow/rf-detr) | **Apache-2.0** |
+| Person detection (lightweight) | `rtmdet_m.onnx` | [RTMDet / MMDetection](https://github.com/open-mmlab/mmdetection) (person-specific weights via the [facebook/sapiens-pose-bbox-detector](https://huggingface.co/facebook/sapiens-pose-bbox-detector) mirror, converted to ONNX with mmdeploy) | **Apache-2.0** |
+| Pose estimation (high accuracy) | `vitpose-h-wholebody-fp16.onnx` | [ViTPose](https://github.com/ViTAE-Transformer/ViTPose) (fp32 converted to fp16) | **Apache-2.0** (code) |
+| Pose estimation (standard) | `vitpose-b-wholebody-fp16.onnx` | [ViTPose](https://github.com/ViTAE-Transformer/ViTPose) (fp32 converted to fp16) | **Apache-2.0** (code) |
+| Pose estimation (fast, body) | `rtmpose-m.onnx` | [RTMPose / MMPose](https://github.com/open-mmlab/mmpose) | **Apache-2.0** |
+| Hand pose (fast, hand) | `rtmpose-m_hand.onnx` | [RTMPose / MMPose](https://github.com/open-mmlab/mmpose) | **Apache-2.0** |
+| Pose estimation (52 anatomical markers) | `synthpose-vitpose-huge-hf.onnx` | [SynthPose / OpenCapBench (Stanford MIMI)](https://huggingface.co/stanfordmimi/synthpose-vitpose-huge-hf) (based on ViTPose-Huge; converted to ONNX with fp16 weights) | **Apache-2.0** (weights; fine-tuned on synthetic data such as BEDLAM; the terms of each dataset apply to the training data) |
 
-## 追加モデルパック（別配布・任意）
+## Additional model packs (distributed separately, optional)
 
-| モデル | 由来 | ライセンス |
+| Model | Origin | License |
 |---|---|---|
-| `vitpose-l-*.onnx` / `vitpose-b-wholebody.onnx`（fp32） | ViTPose | Apache-2.0（コード） |
-| `rtmw-x.onnx` / `rtmpose-x.onnx` | RTMW・RTMPose / MMPose | Apache-2.0 |
+| `vitpose-l-*.onnx` / `vitpose-b-wholebody.onnx` (fp32) | ViTPose | Apache-2.0 (code) |
+| `rtmw-x.onnx` / `rtmpose-x.onnx` | RTMW, RTMPose / MMPose | Apache-2.0 |
 | `yolox_x.onnx` / `yolox_m.onnx` | [YOLOX (Megvii)](https://github.com/Megvii-BaseDetection/YOLOX) | Apache-2.0 |
 | `rfdetr-medium.onnx` | RF-DETR (Roboflow) | Apache-2.0 |
 
-## 除外したモデル（ライセンス上の理由）
+## Excluded models (for license reasons)
 
-| モデル | 由来 | ライセンス | 除外理由 |
+| Model | Origin | License | Reason |
 |---|---|---|---|
-| `yolo26x` / `yolo26m`（旧採用） | [Ultralytics YOLO](https://github.com/ultralytics/ultralytics) | **AGPL-3.0** | 配布・ネット公開で**アプリ全体のソース公開義務**が発生。回避には有償 Enterprise License が必要。公開アプリに不適のため **2026-06-06 に除外**。 |
+| `yolo26x` / `yolo26m` (previously used) | [Ultralytics YOLO](https://github.com/ultralytics/ultralytics) | **AGPL-3.0** | Distribution or network use creates an **obligation to publish the source code of the whole application**; avoiding it requires a paid Enterprise License. Unsuitable for a published application, so **excluded on 2026-06-06**. |
 
-> Ultralytics 系（YOLOv8/v11/「yolo26」等）は AGPL-3.0。研究内部利用は可能でも、**クローズドソースのまま配布・SaaS提供はできません**。本アプリの検出器は Apache-2.0 の RF-DETR・RTMDet（追加パックで YOLOX）のみです。
+> The Ultralytics models (YOLOv8/v11, "yolo26", etc.) are AGPL-3.0. They may be used internally for research, but **cannot be distributed or offered as SaaS as closed source**. The detectors of this application are only the Apache-2.0 RF-DETR and RTMDet (and YOLOX in an additional pack).
 
-## 注意事項
+## Notes
 
-- **学習データの利用条件**：全身（Wholebody）モデル（ViTPose Wholebody・RTMW）は COCO-WholeBody アノテーションで学習されており、COCO-WholeBody は研究・非商用目的に限られます。RTMPose（Halpe26）の学習データにも研究目的に限定されたデータセットが含まれます。アプリ本体の利用規約（研究・教育・個人は無償、商用は要連絡）はこれを踏まえたものです。
-- 上表は各リポジトリの **コード**ライセンスです。**学習済み重み**の再配布条件はコードと異なる場合があるため、配布元（GitHub Releases / HuggingFace 等）の利用条件も確認してください。
-- Apache-2.0 の義務: 配布物に **ライセンス全文の同梱**と**著作権・変更点の表示（NOTICE）**が必要です。本アプリは `licenses/Apache-2.0.txt` と `THIRD_PARTY_NOTICES.md` で対応しています（fp16 変換・ONNX 化を変更点として記載）。
-- 推論基盤 [onnxruntime](https://github.com/microsoft/onnxruntime)（MIT）、[Electron](https://github.com/electron/electron)（MIT）、FFmpeg（ffmpeg-static, GPL-3.0）等の依存にも別途ライセンスがあります（`THIRD_PARTY_NOTICES.md`）。
+- **Terms of the training data**: the whole-body models (ViTPose WholeBody, RTMW) were trained on the COCO-WholeBody annotations, which are limited to research and non-commercial purposes. The training data of RTMPose (Halpe26) also includes datasets restricted to research use. The terms of use of the application itself (free for research, education and personal use; contact the author for commercial use) reflect this.
+- The table above lists the **code** licenses of each repository. Redistribution terms of the **trained weights** may differ from the code, so also check the terms of the distributor (GitHub Releases, Hugging Face, etc.).
+- Apache-2.0 obligations: distributions must **include the full license text** and **state copyright and changes (NOTICE)**. This application does so with `licenses/Apache-2.0.txt` and `THIRD_PARTY_NOTICES.md` (fp16 conversion and ONNX conversion are stated as changes).
+- Dependencies such as the inference runtime [onnxruntime](https://github.com/microsoft/onnxruntime) (MIT), [Electron](https://github.com/electron/electron) (MIT) and FFmpeg (ffmpeg-static, GPL-3.0) have their own licenses (`THIRD_PARTY_NOTICES.md`).

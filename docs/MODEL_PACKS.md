@@ -1,29 +1,29 @@
-# HPE 1.4 モデル構成（標準同梱／追加モデルパック）
+# HPE 1.4 model files (standard installation / additional model packs)
 
-## 標準インストール（約3.1GB）
+## Standard installation (about 3.1 GB)
 
-SynthPose（`synthpose-vitpose-huge-hf.onnx`）は GitHub の1ファイル上限（2GB）のためインストーラーとは別ファイルで配布する。インストーラーと同じフォルダに置いておくと、インストール時に自動でコピーされる。それ以外はインストーラーに含む。
+SynthPose (`synthpose-vitpose-huge-hf.onnx`) is distributed as a separate file from the installer because GitHub limits each file to 2 GB. If it is placed in the same folder as the installer, it is copied automatically during installation. All other models are included in the installer.
 
-| ファイル | 用途 | 使うプリセット |
+| File | Purpose | Used by preset |
 |---|---|---|
-| rfdetr-large.onnx | 人物検出（追従が安定） | 高精度・高速 |
-| vitpose-h-wholebody-fp16.onnx | 全身姿勢（最高精度） | 高精度 |
-| vitpose-b-wholebody-fp16.onnx | 全身姿勢（ViTPose-H より約5倍速い） | カスタム（ViTPose-H が無い環境では高精度の代わり） |
-| rtmpose-m.onnx / rtmpose-m_hand.onnx | 身体姿勢＋手指（高速） | 高速 |
-| rtmdet_m.onnx | 人物検出（CPU向け・軽量） | カスタム／SynthPose |
-| synthpose-vitpose-huge-hf.onnx | 解剖学的マーカー52点（下肢長等の研究用。重みを fp16 に変換） | SynthPose |
+| rfdetr-large.onnx | Person detection (stable tracking) | High accuracy, Fast |
+| vitpose-h-wholebody-fp16.onnx | Whole-body pose (highest accuracy) | High accuracy |
+| vitpose-b-wholebody-fp16.onnx | Whole-body pose (about 5 times faster than ViTPose-H) | Custom (replaces High accuracy where ViTPose-H is unavailable) |
+| rtmpose-m.onnx / rtmpose-m_hand.onnx | Body pose + hands (fast) | Fast |
+| rtmdet_m.onnx | Person detection (lightweight, for CPU) | Custom / SynthPose |
+| synthpose-vitpose-huge-hf.onnx | 52 anatomical markers (for research such as segment lengths; weights converted to fp16) | SynthPose |
 
-ViTPose-H・ViTPose-B の fp16 版は fp32 版を onnxconverter-common で変換（keep_io_types=True）。
-ViTPose-B の fp32 との座標差：平均 0.004px・最大 0.027px（sample.mp4 の3コマ・198点, 2026-09-27）。
+The fp16 versions of ViTPose-H and ViTPose-B were converted from the fp32 versions with onnxconverter-common (keep_io_types=True).
+Coordinate difference of ViTPose-B from fp32: mean 0.004 px, max 0.027 px (3 frames / 198 points of sample.mp4, 2026-09-27).
 
-## 追加モデルパック（GitHub Releases に別ファイルで配布・任意）
+## Additional model packs (distributed separately on GitHub Releases, optional)
 
-入手したファイルを「ヘルプ → 追加モデルのフォルダを開く」で開いたフォルダ（インストール先の `resources\Models`）に置くと、
-カスタム設定・該当プリセットで選べるようになる。
+Place the downloaded files in the folder opened by ヘルプ (Help) → 追加モデルのフォルダを開く (Open additional models folder) (`resources\Models` in the installation folder);
+they can then be selected in the custom settings and the corresponding presets.
 
-| パック | ファイル | 容量 | 内容 |
+| Pack | Files | Size | Contents |
 |---|---|---|---|
-| ViTPose-L | vitpose-l-wholebody.onnx / vitpose-l-coco.onnx / vitpose-l-coco_25.onnx | 各約1.2GB | 比較・検証用 |
-| その他 | rtmw-x.onnx, rtmpose-x.onnx, vitpose-b-wholebody.onnx(fp32), yolox_x.onnx, yolox_m.onnx, rfdetr-medium.onnx | 0.1〜0.4GB | 比較・検証用 |
+| ViTPose-L | vitpose-l-wholebody.onnx / vitpose-l-coco.onnx / vitpose-l-coco_25.onnx | about 1.2 GB each | For comparison and validation |
+| Others | rtmw-x.onnx, rtmpose-x.onnx, vitpose-b-wholebody.onnx (fp32), yolox_x.onnx, yolox_m.onnx, rfdetr-medium.onnx | 0.1–0.4 GB | For comparison and validation |
 
-GitHub Releases の上限（1ファイル2GB）以内なので、各ファイルをそのまま、または ZIP にしてリリースに添付できる。
+Each file is within the GitHub Releases limit (2 GB per file), so it can be attached to a release as is or as a ZIP.
