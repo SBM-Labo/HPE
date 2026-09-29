@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "HPE: Human Pose Estimation"
+abstract: >-
+  A freely available desktop application for human pose estimation
+  (23 keypoints including hand tips and foot points) from video and images,
+  with faithful ByteTrack tracking, ID repair, keypoint correction and
+  Butterworth smoothing with automatic cut-off selection (Winter's residual
+  analysis). Runs with ONNX Runtime; no Python required.
+type: software
+authors:
+  - family-names: "Murata"
+    given-names: "Kazutaka"
+    affiliation: "Faculty of Human Education, Momoyama Gakuin University (St. Andrew's University)"
+    email: "k-murata@andrew.ac.jp"
+version: "1.4.0"
+date-released: "2026-09-29"   # GitHub Release を作成する日に合わせて更新
+license-url: "https://github.com/SBM-Labo/HPE/blob/main/LICENSE.txt"
+url: "https://github.com/SBM-Labo/HPE"
+repository-artifact: "https://github.com/SBM-Labo/HPE/releases"
+keywords:
+  - human pose estimation
+  - markerless motion capture
+  - biomechanics
+  - sports
+  - multi-object tracking
