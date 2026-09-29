@@ -34,10 +34,8 @@ A free Windows desktop application for human pose estimation (23 keypoints) from
 
 ## インストール
 
-1. [Releases](https://github.com/SBM-Labo/HPE/releases/latest) から、次の **2 つのファイルを両方** ダウンロードし、同じフォルダに置きます。
-   - `HPE-Setup-<版>.exe`（インストーラー本体）
-   - `HPE-Setup-<版>.nsisbin`（モデルなどのデータ。サイズが大きいため別ファイルになっています）
-2. `HPE-Setup-<版>.exe` を実行し、利用規約に同意してインストールします。
+1. [Releases](https://github.com/SBM-Labo/HPE/releases/latest) から `HPE-Setup-<版>.exe`（約 1.8GB。姿勢推定モデルを含みます）をダウンロードします。
+2. ダウンロードしたファイルを実行し、利用規約に同意してインストールします。
 3. 「Windows によって PC が保護されました」と表示された場合は、**詳細情報** → **実行** を押してください（本アプリはコード署名をしていないため、この表示が出ます）。
 
 ## 利用規約
