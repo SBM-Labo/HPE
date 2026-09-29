@@ -13,7 +13,7 @@ authors:
     given-names: "Kazutaka"
     affiliation: "Faculty of Human Education, Momoyama Gakuin University (St. Andrew's University)"
 version: "1.4.0"
-date-released: "2026-09-29"   # GitHub Release を作成する日に合わせて更新
+date-released: "2026-09-29"
 license-url: "https://github.com/SBM-Labo/HPE/blob/main/LICENSE.txt"
 url: "https://github.com/SBM-Labo/HPE"
 repository-artifact: "https://github.com/SBM-Labo/HPE/releases"

@@ -1,52 +1,52 @@
 # Third-Party Notices — HPE (Human Pose Estimation)
 
-HPE（以下「本ソフトウェア」）には、以下の第三者ソフトウェアおよび学習済みモデルが含まれています。
-各コンポーネントには、本ソフトウェアの利用規約（LICENSE.txt）ではなく、それぞれのライセンスが適用されます。
-ライセンス全文は同梱の `licenses/` フォルダ（Apache-2.0 / GPL-3.0）および各コンポーネント付属のファイルを参照してください。
+HPE (the "Software") includes the third-party software and trained models listed below.
+Each component is governed by its own license, not by the terms of use of the Software (LICENSE.txt).
+For the full license texts, see the bundled `licenses/` folder (Apache-2.0 / GPL-3.0) and the files provided with each component.
 
-## 1. 学習済みモデル（標準同梱）
+## 1. Trained models (standard installation)
 
-| モデル | 用途 | 出典 | ライセンス |
+| Model | Purpose | Source | License |
 |---|---|---|---|
-| RF-DETR-Large | 人物検出 | Roboflow RF-DETR | Apache-2.0 |
-| RTMDet-M（person） | 人物検出 | OpenMMLab MMDetection | Apache-2.0 |
-| ViTPose-H Wholebody（fp16 に変換） | 全身姿勢推定（高精度プリセット） | ViTAE-Transformer ViTPose | Apache-2.0（コード） |
-| ViTPose-B Wholebody（fp16 に変換） | 全身姿勢推定 | ViTAE-Transformer ViTPose | Apache-2.0（コード） |
-| RTMPose-M（Halpe26） | 身体姿勢推定 | OpenMMLab MMPose | Apache-2.0 |
-| RTMPose-M hand | 手指推定 | OpenMMLab MMPose | Apache-2.0 |
-| SynthPose-Huge（fp16 に変換） | 解剖学的マーカー52点（SynthPose プリセット） | Stanford MIMI SynthPose / OpenCapBench | Apache-2.0 |
+| RF-DETR-Large | Person detection | Roboflow RF-DETR | Apache-2.0 |
+| RTMDet-M (person) | Person detection | OpenMMLab MMDetection | Apache-2.0 |
+| ViTPose-H WholeBody (converted to fp16) | Whole-body pose estimation (High accuracy preset) | ViTAE-Transformer ViTPose | Apache-2.0 (code) |
+| ViTPose-B WholeBody (converted to fp16) | Whole-body pose estimation | ViTAE-Transformer ViTPose | Apache-2.0 (code) |
+| RTMPose-M (Halpe26) | Body pose estimation | OpenMMLab MMPose | Apache-2.0 |
+| RTMPose-M hand | Hand pose estimation | OpenMMLab MMPose | Apache-2.0 |
+| SynthPose-Huge (converted to fp16) | 52 anatomical markers (SynthPose preset) | Stanford MIMI SynthPose / OpenCapBench | Apache-2.0 |
 
-各モデルは ONNX 形式への変換（ViTPose-H・ViTPose-B・SynthPose-Huge は fp16 化）を行っています。
+All models have been converted to the ONNX format (ViTPose-H, ViTPose-B and SynthPose-Huge were also converted to fp16).
 
-**学習データについての注意**：全身（Wholebody）モデルは COCO-WholeBody アノテーションで学習されています。
-COCO-WholeBody のアノテーションは「研究・非商用目的に限る」とされており、商用利用には権利者への連絡が必要です
-（https://github.com/jin-s13/COCO-WholeBody）。RTMPose（Halpe26）の学習データにも研究目的に限定された
-データセットが含まれます。SynthPose-Huge は ViTPose を合成データ（BEDLAM など）で追加学習したモデルで、
-学習データの利用条件は各データセットに従います。本ソフトウェアを研究・教育以外の目的で利用する場合はご注意ください。
+**Note on training data**: the whole-body models were trained on the COCO-WholeBody annotations.
+The COCO-WholeBody annotations are provided "for research and non-commercial purposes only", and commercial use requires contacting the rights holders
+(https://github.com/jin-s13/COCO-WholeBody). The training data of RTMPose (Halpe26) also includes datasets restricted to research use.
+SynthPose-Huge is ViTPose fine-tuned on synthetic data (e.g., BEDLAM); the terms of each dataset apply to its training data.
+Please take care when using the Software for purposes other than research and education.
 
-## 2. 追加モデルパック（別配布・任意）
+## 2. Additional model packs (distributed separately, optional)
 
-ViTPose-L、RTMW-X、YOLOX 等は標準インストールに含まれません。追加モデルパックに同梱の説明に従ってください
-（いずれも Apache-2.0 のモデルですが、上記と同様に学習データの利用条件にご注意ください）。
+ViTPose-L, RTMW-X, YOLOX and others are not included in the standard installation. Follow the instructions provided with each additional model pack
+(all are Apache-2.0 models, but the same caution about training data applies).
 
-## 3. 実行ファイル（別プロセスとして起動）
+## 3. Executables (launched as separate processes)
 
-| コンポーネント | ライセンス | ソースコード |
+| Component | License | Source code |
 |---|---|---|
-| FFmpeg 6.0（npm `ffmpeg-static` 5.2.0 経由） | GPL-3.0-or-later | https://github.com/FFmpeg/FFmpeg/commit/ea3d24bbe3 |
-| FFprobe（npm `ffprobe-static` 3.1.0 経由） | GPL（FFmpeg プロジェクト） | https://ffmpeg.org/download.html#get-sources |
+| FFmpeg 6.0 (via npm `ffmpeg-static` 5.2.0) | GPL-3.0-or-later | https://github.com/FFmpeg/FFmpeg/commit/ea3d24bbe3 |
+| FFprobe (via npm `ffprobe-static` 3.1.0) | GPL (FFmpeg project) | https://ffmpeg.org/download.html#get-sources |
 
-FFmpeg / FFprobe は本ソフトウェアとは独立したプログラムとして同梱され、別プロセスとして呼び出されます。
-GPL-3.0 の全文は `licenses/GPL-3.0.txt` にあります。ソースコードの入手に問題がある場合は作者（k-murata[at]andrew.ac.jp）までご連絡ください。配布日から3年間、対応するソースコードを提供します。
+FFmpeg / FFprobe are bundled as programs independent of the Software and are invoked as separate processes.
+The full text of GPL-3.0 is in `licenses/GPL-3.0.txt`. If you have trouble obtaining the source code, please contact the author (k-murata[at]andrew.ac.jp). The corresponding source code will be provided for three years from the date of distribution.
 
-## 4. アプリケーション基盤・ライブラリ
+## 4. Application framework and libraries
 
-| コンポーネント | ライセンス |
+| Component | License |
 |---|---|
-| Electron（Chromium, Node.js を含む） | MIT（Chromium の各ライセンスは `LICENSES.chromium.html`） |
-| ONNX Runtime（onnxruntime-node 1.23.2） | MIT |
-| DirectML（Windows 版の GPU 推論） | Microsoft DirectML 再配布ライセンス |
-| @napi-rs/canvas 1.0.0（Skia を含む） | MIT（Skia: BSD-3-Clause） |
+| Electron (including Chromium and Node.js) | MIT (Chromium licenses: `LICENSES.chromium.html`) |
+| ONNX Runtime (onnxruntime-node 1.23.2) | MIT |
+| DirectML (GPU inference on Windows) | Microsoft DirectML redistribution license |
+| @napi-rs/canvas 1.0.0 (including Skia) | MIT (Skia: BSD-3-Clause) |
 | jpeg-js 0.4.4 | BSD-3-Clause |
 
-Apache-2.0 の全文は `licenses/Apache-2.0.txt` にあります。
+The full text of Apache-2.0 is in `licenses/Apache-2.0.txt`.

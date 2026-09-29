@@ -1,61 +1,62 @@
-# HPE（Human Pose Estimation）
+# HPE (Human Pose Estimation)
 
-動画・画像から人物の骨格（23点の関節座標）を推定する Windows 用デスクトップアプリです。
-Python は不要で、インストールするだけで最新の姿勢推定モデル（ViTPose-H など）を使えます。
+A free Windows desktop application that estimates human body keypoints (23 joint coordinates) from video and images.
+No Python is required: install it and use state-of-the-art pose estimation models such as ViTPose-H.
 
-A free Windows desktop application for human pose estimation (23 keypoints) from video and images. No Python required.
+日本語の説明は [researchmap](https://researchmap.jp/kazutaka-murata/research_blogs) をご覧ください。
 
-**[⬇ 最新版をダウンロード（Releases）](https://github.com/SBM-Labo/HPE/releases/latest)**
+**[⬇ Download the latest version (Releases)](https://github.com/SBM-Labo/HPE/releases/latest)**
 
-## できること
+## Features
 
-- 画像・動画から人体 23 点（手先・足部・頭頂などを含む）を推定。多人数にも対応します。
-- 人物追跡：ByteTrack（原著実装の忠実な移植）と、すれ違い時の ID の付け替わりを直す ID 補修。
-- 補正・平滑化：左右の取り違えの補正（脚・腕・足部）、外れ値の補正、欠損の補間、平滑化（Butterworthフィルタ。遮断周波数は Winter の残差分析で自動決定）。
-- 身体重心（COM）の算出・表示（阿江・岡田・横井の身体部分慣性係数）。
-- 骨格のオーバーレイ表示、グラフでの時系列確認と手動修正、現在フレームの再推定。
-- CSV・骨格付き動画（MP4）・画像（PNG）の書き出し、複数ファイルのバッチ処理。
+- Estimates 23 body keypoints (including hand tips, foot points and the top of the head) from images and videos, for multiple people.
+- Person tracking: ByteTrack (a faithful port of the original implementation) plus ID repair, which restores identities that are swapped when people cross.
+- Correction and smoothing: correction of left/right mix-ups (legs, arms and feet), outlier correction, gap interpolation, and smoothing with a Butterworth filter (cut-off frequency chosen automatically by Winter's residual analysis).
+- Center of mass (COM) calculation and display (body segment parameters of Ae, Okada and Yokoi).
+- Skeleton overlay, time-series graphs with manual correction, and re-estimation of the current frame.
+- Export to CSV, skeleton-overlay video (MP4) and images (PNG); batch processing of multiple files.
 
-### 計測プリセット
+### Presets
 
-| プリセット | 人物検出 | 姿勢推定 | 特徴 |
+| Preset | Person detector | Pose model | Notes |
 |---|---|---|---|
-| 高精度（既定） | RF-DETR-L | ViTPose-H Wholebody（fp16） | 研究用の標準。手動デジタイズとの誤差 6.2px |
-| 高速 | RF-DETR-L | RTMPose-M ＋ 手指モデル | 高精度より高速 |
-| SynthPose | RTMDet-M | SynthPose-Huge | 解剖学的マーカー 52 点（下肢長などの研究用） |
-| カスタム | 任意 | 任意 | 同梱モデルから組み合わせを選択 |
+| High accuracy (高精度, default) | RF-DETR-L | ViTPose-H WholeBody (fp16) | Standard for research. 6.2 px error against manual digitizing |
+| Fast (高速) | RF-DETR-L | RTMPose-M + hand model | Faster than High accuracy |
+| SynthPose | RTMDet-M | SynthPose-Huge | 52 anatomical markers (for research such as segment lengths) |
+| Custom (カスタム) | Any | Any | Choose any combination of the bundled models |
 
-## 動作環境
+## Requirements
 
-- 64 ビット版 Windows 10 / 11
-- GPU（DirectML 対応）があれば自動で使います。使えない場合は CPU で動きます（時間はかかります）。
-- インストールには 4GB 以上の空き容量が必要です（姿勢推定モデル約 3.1GB を含みます）。
+- Windows 10 / 11 (64-bit)
+- A DirectML-capable GPU is used automatically if available; otherwise HPE runs on the CPU (slower).
+- At least 4 GB of free disk space (the pose estimation models take about 3.1 GB).
+- The user interface is in Japanese.
 
-## インストール
+## Installation
 
-1. [Releases](https://github.com/SBM-Labo/HPE/releases/latest) から、次の **2 つのファイル** をダウンロードし、同じフォルダに置きます（合わせて約 3GB）。
-   - `HPE-Setup-<版>.exe`（インストーラー。姿勢推定モデルを含みます）
-   - `synthpose-vitpose-huge-hf.onnx`（SynthPose のモデル。GitHub の1ファイル上限 2GB を超えないよう別ファイルにしています。同じフォルダにあれば、インストール時に自動でコピーされます）
-2. `HPE-Setup-<版>.exe` を実行し、利用規約に同意してインストールします。
-3. 「Windows によって PC が保護されました」と表示された場合は、**詳細情報** → **実行** を押してください（本アプリはコード署名をしていないため、この表示が出ます）。
+1. From [Releases](https://github.com/SBM-Labo/HPE/releases/latest), download the following **two files** and put them in the same folder (about 3 GB in total).
+   - `HPE-Setup-<version>.exe` (the installer; includes the pose estimation models)
+   - `synthpose-vitpose-huge-hf.onnx` (the SynthPose model; a separate file because GitHub limits each file to 2 GB. If it is in the same folder, the installer copies it automatically)
+2. Run `HPE-Setup-<version>.exe`, accept the terms of use and install.
+3. If Windows shows "Windows protected your PC", click **More info** → **Run anyway** (this appears because the application is not code-signed).
 
-## 利用規約
+## Terms of use
 
-本ソフトウェアは、**研究・教育・個人での利用に限り無償**で利用できます。営利目的での利用を希望する場合は、事前に作者へご連絡ください。
-再配布・改変は禁止しています（このページへのリンクによる紹介は歓迎します）。詳しくは [LICENSE.txt](LICENSE.txt) をご覧ください。
+This software is **free for research, educational and personal use**. For commercial use, please contact the author in advance.
+Redistribution and modification are not permitted (linking to this page is welcome). See [LICENSE.txt](LICENSE.txt) for details.
 
-同梱の第三者ソフトウェア・学習済みモデルには、それぞれのライセンスが適用されます（[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)、[モデルのライセンス](docs/MODEL_LICENSES.md)）。
-全身姿勢推定モデルの学習データ（COCO-WholeBody など）は研究・非商用目的に限定されています。研究・教育以外の目的で利用する場合はご注意ください。
+Bundled third-party software and trained models are covered by their own licenses ([THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), [model licenses](docs/MODEL_LICENSES.md)).
+The training data of the whole-body pose models (e.g., COCO-WholeBody) is limited to research and non-commercial use. Please take care when using the software for purposes other than research and education.
 
-## 引用
+## Citation
 
-本ソフトウェアを用いた研究成果を発表する際は、次のように引用してください（[CITATION.cff](CITATION.cff)）。
+If you publish results obtained with this software, please cite it as follows ([CITATION.cff](CITATION.cff)).
 
 > Murata, K. HPE: Human Pose Estimation (Version 1.4.0) [Computer software]. SBM_Labo. https://github.com/SBM-Labo/HPE
 
-## 不具合の報告・問い合わせ
+## Bug reports and contact
 
-- 不具合の報告・要望：[Issues](https://github.com/SBM-Labo/HPE/issues)
-- 連絡先：村田 和隆（桃山学院大学 人間教育学部）k-murata[at]andrew.ac.jp
+- Bug reports and requests: [Issues](https://github.com/SBM-Labo/HPE/issues)
+- Contact: Kazutaka Murata (Faculty of Human Education, Momoyama Gakuin University), k-murata[at]andrew.ac.jp
 
 © 2026 Kazutaka Murata (SBM_Labo)
