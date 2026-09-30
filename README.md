@@ -1,5 +1,7 @@
 # HPE (Human Pose Estimation)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23049885.svg)](https://doi.org/10.5281/zenodo.23049885)
+
 A free Windows desktop application that estimates human body keypoints (23 joint coordinates) from video and images.
 No Python is required: install it and use state-of-the-art pose estimation models such as ViTPose-H.
 
@@ -64,7 +66,9 @@ The training data of the whole-body pose models (e.g., COCO-WholeBody) is limite
 
 If you publish results obtained with this software, please cite it as follows ([CITATION.cff](CITATION.cff)).
 
-> Murata, K. HPE: Human Pose Estimation (Version 1.4.0) [Computer software]. SBM_Labo. https://github.com/SBM-Labo/HPE
+> Murata, K. (2026). *HPE: Human Pose Estimation* (Version 1.4.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23049885
+
+Please state the version you used. The DOI above always resolves to the latest version; each version also has its own DOI, listed on the [Zenodo page](https://doi.org/10.5281/zenodo.23049885).
 
 ## Bug reports and contact
 

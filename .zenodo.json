@@ -1,0 +1,32 @@
+{
+  "upload_type": "software",
+  "title": "HPE: Human Pose Estimation",
+  "creators": [
+    {
+      "name": "Murata, Kazutaka",
+      "orcid": "0009-0004-2725-1333",
+      "affiliation": "Faculty of Human Education, Momoyama Gakuin University (St. Andrew's University)"
+    }
+  ],
+  "description": "<p>A freely available desktop application for human pose estimation (23 keypoints including hand tips and foot points) from video and images, with faithful ByteTrack tracking, ID repair, keypoint correction and Butterworth smoothing with automatic cut-off selection (Winter's residual analysis). Runs with ONNX Runtime; no Python required. Windows 10/11 (64-bit); the user interface is in Japanese.</p><p>The installer and model files are distributed from <a href=\"https://github.com/SBM-Labo/HPE/releases\">GitHub Releases</a>. Free for research, educational and personal use; redistribution and modification are not permitted (see LICENSE.txt). Source code is not publicly available.</p>",
+  "keywords": [
+    "human pose estimation",
+    "markerless motion capture",
+    "biomechanics",
+    "sports",
+    "multi-object tracking"
+  ],
+  "license": "other-closed",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/SBM-Labo/HPE/blob/main/LICENSE.txt",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/SBM-Labo/HPE/releases",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
+  ]
+}
