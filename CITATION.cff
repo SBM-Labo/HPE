@@ -12,6 +12,7 @@ authors:
   - family-names: "Murata"
     given-names: "Kazutaka"
     affiliation: "Faculty of Human Education, Momoyama Gakuin University (St. Andrew's University)"
+    orcid: "https://orcid.org/0009-0004-2725-1333"
 version: "1.4.0"
 date-released: "2026-09-29"
 license-url: "https://github.com/SBM-Labo/HPE/blob/main/LICENSE.txt"
