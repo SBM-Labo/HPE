@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23049885.svg)](https://doi.org/10.5281/zenodo.23049885)
 
-A free Windows desktop application that estimates human body keypoints (23 joint coordinates) from video and images.
+A free desktop application for Windows and macOS (Apple silicon) that estimates human body keypoints (23 joint coordinates) from video and images.
 No Python is required: install it and use state-of-the-art pose estimation models such as ViTPose-H.
 
 A description in Japanese is available on [researchmap](https://researchmap.jp/blogs/blog_entries/view/804425/5667e6b4a90300bc75a2a33440a0e75f?frame_id=1462744).
@@ -41,18 +41,26 @@ The user interface is in Japanese. Video used in the demo and screenshots: [Pexe
 
 ## Requirements
 
-- Windows 10 / 11 (64-bit)
-- A DirectML-capable GPU is used automatically if available; otherwise HPE runs on the CPU (slower).
+- **Windows**: Windows 10 / 11 (64-bit). A DirectML-capable GPU is used automatically if available; otherwise HPE runs on the CPU (slower).
+- **macOS**: macOS 13 Ventura or later on Apple silicon (M1 or later). Person detection and pose estimation run on the GPU through Core ML.
 - At least 4 GB of free disk space (the pose estimation models take about 3.1 GB).
 - The user interface is in Japanese.
 
 ## Installation
+
+### Windows
 
 1. From [Releases](https://github.com/SBM-Labo/HPE/releases/latest), download the following **two files** and put them in the same folder (about 3 GB in total).
    - `HPE-Setup-<version>.exe` (the installer; includes the pose estimation models)
    - `synthpose-vitpose-huge-hf.onnx` (the SynthPose model; a separate file because GitHub limits each file to 2 GB. If it is in the same folder, the installer copies it automatically)
 2. Run `HPE-Setup-<version>.exe`, accept the terms of use and install.
 3. If Windows shows "Windows protected your PC", click **More info** → **Run anyway** (this appears because the application is not code-signed).
+
+### macOS (Apple silicon)
+
+1. From [Releases](https://github.com/SBM-Labo/HPE/releases/latest), download `HPE-<version>-arm64.dmg`.
+2. Open it and drag **HPE** into the **Applications** folder. The app is signed and notarized by Apple.
+3. To use the SynthPose preset, also download `synthpose-vitpose-huge-hf-coreml.zip` (the Core ML version of the SynthPose model for Mac). In HPE, choose **ヘルプ (Help) → 追加モデルを読み込む… (Load additional model…)** and select the downloaded zip file (no need to unzip it).
 
 ## Terms of use
 
